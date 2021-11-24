@@ -16,6 +16,7 @@ class Button(QMainWindow, Ui_MainWindow):
         self.f = 1
         self.x = randrange(self.size().width())
         self.y = randrange(self.size().height())
+        self.h = randrange(50)
 
     def paintEvent(self, event):
         if self.f:
@@ -27,7 +28,7 @@ class Button(QMainWindow, Ui_MainWindow):
 
     def draw_c(self, qp):
         qp.setBrush(QColor(255, 255, 0))
-        qp.drawEllipse(self.x, self.y, 50, 50)
+        qp.drawEllipse(self.x, self.y, self.h, self.h)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
